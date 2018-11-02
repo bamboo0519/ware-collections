@@ -1,0 +1,78 @@
+
+spring:
+  profiles:
+    active: local
+---
+
+
+spring:
+  profiles: local
+  mvc:
+    static-path-pattern: /**
+  resources:
+    static-locations: classpath:/templates/,classpath:/templates/home/
+  thymeleaf:
+    content-type: text/html
+    cache: false
+    mode: LEGACYHTML5
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+  datasource:
+    name: test
+    url: "jdbc:mysql://localhost:3306/ibamboo-user?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false"
+    username: root
+    password: ""
+    # druid 连接池 #
+#    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: "com.mysql.jdbc.Driver"
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+#
+#spring:
+#  profiles: test
+#  mvc:
+#    static-path-pattern: /**
+#  resources:
+#    static-locations: classpath:/templates/,classpath:/templates/home/
+#  thymeleaf:
+#    content-type: text/html
+#    cache: false
+#    mode: LEGACYHTML5
+#  redis:
+#    database: 0
+#    host: 127.0.0.1
+#    port: 6379
+#  datasource:
+#    name: test
+#    url: "jdbc:h2:mem:testdb;MODE=MYSQL;DB_CLOSE_DELAY=-1;INIT=RUNSCRIPT FROM 'classpath:db/t_user.sql'"
+#    username: root
+#    password: root
+#    # druid 连接池
+#    type: com.alibaba.druid.pool.DruidDataSource
+#    driver-class-name: org.h2.Driver
+#    filters: stat
+#    maxActive: 20
+#    initialSize: 1
+#    maxWait: 60000
+#    minIdle: 1
+#    timeBetweenEvictionRunsMillis: 60000
+#    minEvictableIdleTimeMillis: 300000
+#    validationQuery: select 'x'
+#    testWhileIdle: true
+#    testOnBorrow: false
+#    testOnReturn: false
+#    poolPreparedStatements: true
+#    maxOpenPreparedStatements: 20
