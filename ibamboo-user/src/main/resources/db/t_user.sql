@@ -23,4 +23,4 @@ CREATE TABLE `t_user` (
   UNIQUE INDEX uni_index_mobile(`mobile`),
   UNIQUE INDEX uni_index_email(`email`),
   UNIQUE INDEX uni_index_id_code(`id_code`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='账户表';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='用账户表';

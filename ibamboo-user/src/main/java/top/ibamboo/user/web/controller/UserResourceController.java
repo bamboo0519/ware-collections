@@ -12,6 +12,7 @@ import top.ibamboo.common.BambooResponse;
 import top.ibamboo.user.api.model.WareUser;
 import top.ibamboo.user.repository.persistant.WareUserRepository;
 
+import javax.jws.soap.SOAPBinding;
 import java.util.Map;
 
 /**
@@ -24,6 +25,12 @@ public class UserResourceController {
 
     @Autowired
     private WareUserRepository wareUserRepository;
+
+    public UserResourceController() {
+        log.info("构造方法");
+        int i = 0;
+        log.info("构造方法:{}", i++);
+    }
 
     @RequestMapping(value = "/create", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ResponseBody
